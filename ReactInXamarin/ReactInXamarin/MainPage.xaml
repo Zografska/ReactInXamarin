@@ -6,17 +6,17 @@
     <StackLayout
         Spacing="0">
         <Button
-            Text="Click me" BackgroundColor="Aqua" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+            Text="Click me" BackgroundColor="Blue" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
         <!--This is used to prevent the WebView from expending over other elements-->
         <BoxView
             Margin="0"
             HeightRequest="1"
-            Color="White"/>
+            Color="Black"/>
         <controls:HybridWebView BackgroundColor="Green"
             x:Name="HybridWebView"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            SourceUrl="http://127.0.0.1:8081" />
+            SourceUrl="{Binding SourceUrl}"/>
     </StackLayout>
 
 </ContentPage>

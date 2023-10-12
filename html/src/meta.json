@@ -1,0 +1,45 @@
+{
+  "name": "app",
+  "plugins": [
+    {
+      "name": "Chakra UI",
+      "description": "Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.",
+      "url": "https://chakra-ui.com/docs/getting-started"
+    },
+    {
+      "name": "Styled Components",
+      "description": "Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components.",
+      "url": "https://styled-components.com/docs"
+    },
+    {
+      "name": "Styled System",
+      "description": "Styled System is a collection of utility functions that add style props to your React components and allows you to control styles based on a global theme object with typographic scales, colors, and layout properties.",
+      "url": "https://styled-system.com/getting-started"
+    },
+    {
+      "name": "Fetch",
+      "description": "The global fetch function allows you to make AJAX requests. It takes in a URL as an input and returns a Promise that resolves to a Response object.",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+    },
+    {
+      "name": "SWR",
+      "description": "React Hooks library for data fetching from Vercel",
+      "url": "https://swr.vercel.app/"
+    },
+    {
+      "name": "react-use",
+      "description": "A Collection of useful React hooks.",
+      "url": "https://github.com/streamich/react-use"
+    },
+    {
+      "name": "eslint",
+      "description": "",
+      "url": ""
+    },
+    {
+      "name": "jest",
+      "description": "",
+      "url": ""
+    }
+  ]
+}

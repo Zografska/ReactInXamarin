@@ -1,10 +1,18 @@
 using Prism.AppModel;
+using Prism.Mvvm;
 using Prism.Navigation;
 
 namespace ReactInXamarin.ViewModels
 {
-    public class MainPageViewModel : INavigatedAware, IPageLifecycleAware
+    public class MainPageViewModel : BindableBase, INavigatedAware, IPageLifecycleAware
     {
+        private string _sourceUrl;
+        public string SourceUrl
+        {
+            get => _sourceUrl;
+            set => SetProperty(ref _sourceUrl, value);
+        }
+        
         public MainPageViewModel()
         {
             
@@ -21,6 +29,7 @@ namespace ReactInXamarin.ViewModels
 
         public void OnAppearing()
         {
+            SourceUrl = "http://127.0.0.1:8081/?listId=list1";
         }
 
         public void OnDisappearing()

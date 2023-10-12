@@ -40,8 +40,4 @@
             <Link>html\build\static\css\main.css.map</Link>
         </EmbeddedResource>
     </ItemGroup>
-    
-    <ItemGroup>
-
-    </ItemGroup>
 </Project>
