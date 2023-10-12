@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ReactInXamarin.Controls;assembly=ReactInXamarin"
+             x:Class="ReactInXamarin.MainPage">
+    <StackLayout
+        Spacing="0">
+        <Button
+            Text="Click me" BackgroundColor="Aqua" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+        <!--This is used to prevent the WebView from expending over other elements-->
+        <BoxView
+            Margin="0"
+            HeightRequest="1"
+            Color="White"/>
+        <controls:HybridWebView BackgroundColor="Green"
+            x:Name="HybridWebView"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            SourceUrl="http://127.0.0.1:8081" />
+    </StackLayout>
+
+</ContentPage>

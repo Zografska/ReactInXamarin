@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>pdbonly</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+        <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+        <PackageReference Include="Prism.Plugin.Popups" Version="8.0.31-beta" />
+        <PackageReference Include="EmbedIO" Version="3.4.3" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="..\..\html\build\static\css\main.css">
+            <Link>html\build\static\css\main.css</Link>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\..\html\build\index.html">
+            <Link>html\build\index.html</Link>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\..\html\build\asset-manifest.json">
+            <Link>html\build\asset-manifest.json</Link>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\..\html\build\static\js\main.js.map">
+            <Link>html\build\static\js\main.js.map</Link>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\..\html\build\static\js\main.js">
+            <Link>html\build\static\js\main.js</Link>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\..\html\build\static\js\main.js.LICENSE.txt">
+            <Link>html\build\static\js\main.js.LICENSE.txt</Link>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\..\html\build\static\css\main.css.map">
+            <Link>html\build\static\css\main.css.map</Link>
+        </EmbeddedResource>
+    </ItemGroup>
+    
+    <ItemGroup>
+
+    </ItemGroup>
+</Project>
