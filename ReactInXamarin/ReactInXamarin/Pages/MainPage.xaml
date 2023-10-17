@@ -5,18 +5,25 @@
              x:Class="ReactInXamarin.MainPage">
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         
-        <StackLayout Grid.Row="1">
-            <Button 
-                Text="Yellow" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="yellow" />
+        <StackLayout Grid.Row="0" Margin="0,50,0,0">
+            <Label TextColor="Gray" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold">Press a Color</Label>
+            <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue" Padding="5,0">
+                <Button Text="Red" TextColor="Red" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="red" />
+                <Button Text="Orange" TextColor="Orange" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="orange" />
+                <Button Text="Yellow" TextColor="Yellow" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="yellow" />
+                <Button Text="Green" TextColor="Green" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="green" />
+                <Button Text="Blue" TextColor="Blue" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="blue" />
+                <Button Text="Purple" TextColor="Purple" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="purple" />
+            </StackLayout>
+            
             <Label TextColor="Gray" FontSize="Micro" HorizontalOptions="CenterAndExpand" FontAttributes="Italic">to send a message to the webview</Label>
         </StackLayout>
         
-        <controls:HybridWebView Grid.Row="2"
+        <controls:HybridWebView Grid.Row="1"
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="FillAndExpand"
                                 Message="{Binding Message}"
