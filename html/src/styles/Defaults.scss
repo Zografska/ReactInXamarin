@@ -4,3 +4,101 @@ body {
   padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5%;
+  gap: 20px; /* Adjust the gap between items as needed */
+}
+
+.grid-item {
+  /* Add styling for grid items here */
+  background-color: #f0f0f06a;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Style the container */
+.container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: #f0f0f041;
+  position: relative; /* Create a positioning context */
+}
+
+/* Style the info text */
+.info-text {
+  position: absolute;
+  top: 10px; /* Adjust top position as needed */
+  right: 10px; /* Adjust right position as needed */
+  background-color: #007bff5d; /* Background color for the info text */
+  color: #fff; /* Text color for the info text */
+  padding: 5px 10px; /* Adjust padding as needed */
+  font-size: 12px; /* Adjust font size as needed */
+  border-radius: 4px; /* Rounded corners for the info text */
+}
+
+/* Style the title */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Style the description */
+.description {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Style the container for the empty message */
+.empty-message {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px; /* Rounded corners for the container */
+}
+
+/* Style the text message */
+.empty-message p {
+  font-size: 18px;
+  color: #888;
+  margin: 0;
+  padding: 0;
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item {
+    /* Adjust styling for smaller screens */
+    padding: 10px;
+  }
+}

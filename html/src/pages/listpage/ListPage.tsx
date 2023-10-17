@@ -56,31 +56,39 @@ export class ListPage extends React.Component<Props> {
 
     return (
       <div>
-          <div style={{height:'100%', overflowY:'auto'}}>
-            <input value="Hello List Page"></input>
-            <div>
+          <div style={{height:'100%', overflowY:'auto', width:'auto'}}>
+            <div className="grid-container">
               {isListEmpty ? (
-                  <div>
-                  The list has no items
+                <div className="empty-message">
+                  <p>No items are present.</p>
                 </div>
+              
                 ) : (
                   items.map((item: Models.Item) => (
-                    <div> {item.title} </div>)
+                    <div className="grid-item"> 
+                    <div className="container">
+                      <div className="info-text">{item.listName}</div>
+                      <h2 className="title">{item.title}</h2>
+                      <p className="description">{item.description}</p>
+
+                    </div>
+                    </div>)
                   )
                 )
               } 
             </div>
-
-            { isLoading ?? 
-              <div>
+          
+            {isLoading ?? 
+              <div className="grid-container">
                 <LoadingPlaceholder />
                 <LoadingPlaceholder />
                 <LoadingPlaceholder />
                 <LoadingPlaceholder />
               </div>
-            }
-          </div>
+            }      
+            </div>
       </div>
+      
     );
   }
 }
