@@ -1,12 +1,9 @@
-﻿using System;
-using DryIoc;
-using Prism;
+﻿using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
-using Prism.Navigation;
-using Prism.Plugin.Popups;
 using ReactInXamarin.MobileApi.Controllers;
 using ReactInXamarin.MobileApi.WebServer;
+using ReactInXamarin.Pages;
 using ReactInXamarin.Services;
 using ReactInXamarin.ViewModels;
 using Xamarin.Forms;
@@ -26,6 +23,7 @@ namespace ReactInXamarin
             // containerRegistry.RegisterPopupNavigationService();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<ItemPage, ItemPageViewModel>();
             containerRegistry.RegisterSingleton<IItemsService, ItemsService>();
             containerRegistry.RegisterSingleton<IMobileWebServer, MobileWebServer>();
             containerRegistry.RegisterSingleton<IMobileController, BaseMobileController>();

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReactInXamarin.Pages.ItemPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="30">
+            <Label Text="{Binding ItemId, StringFormat='The webview told us to open item with ID: {0:F2}'}" 
+                   TextColor="Blue"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large"/>
+            <Label Text="This is the interoperability we can have between both the technologies." 
+                   FontSize="Medium"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+            <Label Text="It's a great way to keep some pages of old apps and migrate the rest to web." 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+            <Label Text="Also good for people that don't want to give up .Net and all that goodies that come from it." 
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

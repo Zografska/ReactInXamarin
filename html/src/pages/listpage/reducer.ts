@@ -16,24 +16,11 @@ export default function reducer(
 ): ListPage.ListPage {
     switch (action.type) {
         case actions.REQUEST_LOAD_MORE_ITEMS:
-            const { searchText } = action as actions.LoadMoreAction;
-            return { ...state, isLoading: true, searchText};
-
-        case actions.RESET_PAGING:
-            return { ...state, items: [], isLoading: true, canLoadMore: true, currentPage: 1 }
+            return { ...state, isLoading: true};
 
         case actions.RECEIVE_ITEMS:
-            const { items: itemsArray, page } = action as actions.ReceiveItemsAction;
-            const recievedItems: Models.Item[] = page === 1 ? itemsArray : (state.items as Models.Item[]).concat(itemsArray);
-            const isLoading = false;
-            return { ...state, items: recievedItems, isLoading, currentPage: page }
-
-        case actions.INITIALIZE:
-            const { listId, page: currentPage } = action as actions.InitializeAction;
-            return { ...state, listId, currentPage}
-
-        case actions.RELOAD:
-            return { ...state, isLoading: true}
+            const { items } = action as actions.ReceiveItemsAction;
+            return { ...state, items, isLoading: false }
 
         default:
             return state

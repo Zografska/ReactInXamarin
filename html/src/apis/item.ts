@@ -11,7 +11,7 @@ declare namespace ItemApi {
 }
 
 export const getItems = (
-    listId: string, page: number, searchText: string
+    listId: string,
 ): Promise<Models.Item[]> =>
 {    
     return mobileAPI
@@ -19,6 +19,19 @@ export const getItems = (
         .then((response: ItemApi.ItemDTO[]) => {
             const items = response.map(convertToItem)
             return items
+        })}
+
+export const navigateToItem = (
+    itemId: number,
+): Promise<void> =>
+{    
+    return mobileAPI
+        .getJSON(`items/navigate/${itemId}`)
+        .then((response: string) => {
+            if(response !== "OK")
+            {
+                throw new Error("Something went wrong when navigating")
+            }
         })}
 
 

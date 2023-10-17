@@ -27,7 +27,7 @@ export class ListPage extends React.Component<Props> {
   }
 
   componentDidMount(): void {
-    this.loadPage(1, "")
+    this.props.loadMoreItems(this.listId);
     window.onReceiveMessage = this.onReceiveMessage.bind(this);
   }
 
@@ -39,10 +39,8 @@ export class ListPage extends React.Component<Props> {
 
   }
 
-  loadPage = (page: number, searchText: string) => {
-    const { loadMoreItems } = this.props;
-
-    loadMoreItems(this.listId, page, searchText, false);
+  onClick = (itemId: number) => {
+    this.props.navigateToItemPage(itemId)
   }
 
   render(): JSX.Element {
@@ -65,7 +63,7 @@ export class ListPage extends React.Component<Props> {
               
                 ) : (
                   items.map((item: Models.Item) => (
-                    <div className="grid-item"> 
+                    <div className="grid-item" onClick={() => this.onClick(item.id)}> 
                     <div className="container">
                       <div className="info-text">{item.listName}</div>
                       <h2 className="title">{item.title}</h2>

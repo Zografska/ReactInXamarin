@@ -15,27 +15,27 @@ export const requestLoadMoreItemsEpic: Epic = (
         concatMap((action: actions.LoadMoreAction) =>
             from(
                 itemAPI.getItems(
-                    action.listId,
-                    action.page,
-                    action.searchText,
+                    action.listId
                 )
             ).pipe(
                 mergeMap((response: Models.Item[]) => concat(
-                        of(actions.receiveItems(response, action.page)))),
+                        of(actions.receiveItems(response)))),
             )
         )
     )
 
-export const reloadEpic: Epic = (action$, state$) =>
+export const navigateEpic: Epic = (action$, _, {listPage: {itemAPI}}: GlobalDependencies) =>
     action$.pipe(
-        ofType(actions.RELOAD),
-        concatMap(() => concat(
-            of(actions.resetPaging()),
-            of(actions.loadMoreItems(state$.value.listPage.listId, 1, state$.value.listPage.searchText, true)))
-        ),
+        ofType(actions.NAVIGATE),
+        concatMap((action: actions.NavigateAction) => concat(
+            from(
+                itemAPI.navigateToItem(action.itemId)
+                )
+            ),
+        )
     )
 
 export default combineEpics(
     requestLoadMoreItemsEpic,
-    reloadEpic,
+    navigateEpic,
 )
