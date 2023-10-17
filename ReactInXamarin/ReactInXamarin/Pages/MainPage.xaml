@@ -3,20 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ReactInXamarin.Controls;assembly=ReactInXamarin"
              x:Class="ReactInXamarin.MainPage">
-    <StackLayout
-        Spacing="0">
-        <Button
-            Text="Click me" BackgroundColor="Blue" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-        <!--This is used to prevent the WebView from expending over other elements-->
-        <BoxView
-            Margin="0"
-            HeightRequest="1"
-            Color="Black"/>
-        <controls:HybridWebView BackgroundColor="Green"
-            x:Name="HybridWebView"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            SourceUrl="{Binding SourceUrl}"/>
-    </StackLayout>
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        
+        <StackLayout Grid.Row="1">
+            <Button 
+                Text="Yellow" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="yellow" />
+            <Label TextColor="Gray" FontSize="Micro" HorizontalOptions="CenterAndExpand" FontAttributes="Italic">to send a message to the webview</Label>
+        </StackLayout>
+        
+        <controls:HybridWebView Grid.Row="2"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Message="{Binding Message}"
+                                SourceUrl="http://127.0.0.1:8081/?listId=list1"/>
+    </Grid>
 
 </ContentPage>

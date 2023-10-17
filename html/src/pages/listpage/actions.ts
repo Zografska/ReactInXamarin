@@ -11,6 +11,17 @@ export const loadMoreItems = (listId: string): LoadMoreAction => ({
     listId,
 })
 
+export const CHANGE_TITLE_COLOR = "CHANGE_TITLE_COLOR"
+
+export interface ChangeTitleColor extends Action {
+    color: string
+}
+
+export const changeTitleColor = (color: string): ChangeTitleColor => ({
+    type: CHANGE_TITLE_COLOR,
+    color,
+})
+
 export const RECEIVE_ITEMS = "RECEIVE_ITEMS"
 
 export interface ReceiveItemsAction extends Action {
@@ -36,6 +47,7 @@ export const navigateToItemPage = (itemId: number): NavigateAction => ({
 export const mapDispatchToProps = {
     loadMoreItems,
     navigateToItemPage,
+    changeTitleColor,
 }
 
 export type DispatchProps = typeof mapDispatchToProps

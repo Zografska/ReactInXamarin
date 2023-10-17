@@ -4,10 +4,8 @@ import * as actions from "./actions";
 export const initialState: ListPage.ListPage = {
     items: [],
     isLoading: false,
-    canLoadMore: true,
-    currentPage: 0,
     listId: "",
-    searchText: "",
+    titleColor: "black"
 }
 
 export default function reducer(
@@ -22,6 +20,10 @@ export default function reducer(
             const { items } = action as actions.ReceiveItemsAction;
             return { ...state, items, isLoading: false }
 
+        case actions.CHANGE_TITLE_COLOR:
+            const { color } = action as actions.ChangeTitleColor
+            return { ...state, titleColor: color }
+            
         default:
             return state
     }

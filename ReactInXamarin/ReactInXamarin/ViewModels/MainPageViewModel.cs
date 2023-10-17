@@ -1,6 +1,9 @@
+using System.Windows.Input;
 using Prism.AppModel;
 using Prism.Mvvm;
 using Prism.Navigation;
+using ReactInXamarin.Models;
+using Xamarin.Forms;
 
 namespace ReactInXamarin.ViewModels
 {
@@ -13,9 +16,20 @@ namespace ReactInXamarin.ViewModels
             set => SetProperty(ref _sourceUrl, value);
         }
         
+        private WebViewMessage _message;
+        public WebViewMessage Message
+        {
+            get => _message;
+            set => SetProperty(ref _message, value);
+        }
+        public ICommand OnClickCommand { get; set; }
+        
         public MainPageViewModel()
         {
-            
+            OnClickCommand = new Command<string>((color) =>
+            {
+                Message = new WebViewMessage { Action = "SayHelloFromXamarin", Data = color };
+            });
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
@@ -29,7 +43,7 @@ namespace ReactInXamarin.ViewModels
 
         public void OnAppearing()
         {
-            SourceUrl = "http://127.0.0.1:8081/?listId=list1";
+            // SourceUrl = "http://127.0.0.1:8081/?listId=list1";
         }
 
         public void OnDisappearing()

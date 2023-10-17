@@ -15,8 +15,6 @@ type Props = StateProps & DispatchProps;
 
 export class ListPage extends React.Component<Props> {
   observer: IntersectionObserver | null = null;
-  loadingRef: HTMLDivElement | null = null;
-  pullToRefreshPromise: Function | null = null;
   listId: string;
 
   constructor(props: Props) {
@@ -36,7 +34,9 @@ export class ListPage extends React.Component<Props> {
   }
 
   onReceiveMessage(message: Models.WebMessage) {
-
+    if(message.Action === "SayHelloFromXamarin"){
+      this.props.changeTitleColor(message.Data as string)
+    }
   }
 
   onClick = (itemId: number) => {
@@ -66,7 +66,7 @@ export class ListPage extends React.Component<Props> {
                     <div className="grid-item" onClick={() => this.onClick(item.id)}> 
                     <div className="container">
                       <div className="info-text">{item.listName}</div>
-                      <h2 className="title">{item.title}</h2>
+                      <h2 className="title" style={{ color: this.props.titleColor }}>{item.title}</h2>
                       <p className="description">{item.description}</p>
 
                     </div>
