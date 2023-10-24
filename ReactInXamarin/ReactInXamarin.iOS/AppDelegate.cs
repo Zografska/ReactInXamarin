@@ -29,7 +29,7 @@ namespace ReactInXamarin.iOS
             Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
             XamarinApp = new App(this);
-            XamarinApp.InitializeApp();
+            // XamarinApp.InitializeApp();
             LoadApplication(XamarinApp);
             
             return base.FinishedLaunching(app, options);

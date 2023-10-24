@@ -32,15 +32,15 @@ namespace ReactInXamarin
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
+            StartMobileWebServer();
             await NavigationService.NavigateTo<MainPage>();
         }
 
         protected override void OnSleep()
         {
             base.OnSleep();
-            _mobileWebServer.Stop();
-            _mobileWebServer.Dispose();
+            _mobileWebServer?.Stop();
+            _mobileWebServer?.Dispose();
             _mobileWebServer = null;
         }
 
@@ -61,7 +61,8 @@ namespace ReactInXamarin
 
             _mobileWebServer = new MobileWebServer(mobileController);
             _mobileWebServer.Init();
-            _mobileWebServer.RegisterEmbeddedResources("/", typeof(App).Assembly, $"{typeof(App).Assembly.GetName().Name}.html.build");
+            _mobileWebServer.RegisterEmbeddedResources("/", typeof(App).Assembly,
+                $"{typeof(App).Assembly.GetName().Name}.html.build");
             _mobileWebServer.Start();
         }
     }

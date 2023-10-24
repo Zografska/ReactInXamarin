@@ -15,7 +15,7 @@
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
         <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-        <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,6 +40,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Mono.Android" />
+        <Reference Include="Mono.Android.Export" />
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Xml.Linq" />
@@ -52,6 +53,10 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
+        <Compile Include="Renderers\HybridWebViewRenderer.cs" />
+        <Compile Include="Renderers\JsBridge.cs" />
+        <Compile Include="Renderers\JavascriptWebViewClient.cs" />
+        <Compile Include="Renderers\NativeWebView.cs" />
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
