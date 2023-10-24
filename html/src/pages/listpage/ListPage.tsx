@@ -54,7 +54,8 @@ export class ListPage extends React.Component<Props> {
 
     return (
       <div>
-          <div style={{height:'100%', overflowY:'auto', width:'auto'}}>
+          <div style={{height:'100%', overflowY:'auto', width:'auto', textAlign: 'center'}}>
+          <h2>Hello from React!</h2>
             <div className="grid-container">
               {isListEmpty ? (
                 <div className="empty-message">

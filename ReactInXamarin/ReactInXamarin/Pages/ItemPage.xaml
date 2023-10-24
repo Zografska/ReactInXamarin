@@ -5,8 +5,8 @@
              x:Class="ReactInXamarin.Pages.ItemPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="30">
-            <Label Text="{Binding ItemId, StringFormat='The webview told us to open item with ID: {0:F2}'}" 
-                   TextColor="Blue"
+            <Label Text="{Binding ItemId, StringFormat='The webview told us to open item with ID: {0:F2}'}"
+                   FontAttributes="Bold"
                    HorizontalTextAlignment="Center"
                    FontSize="Large"/>
             <Label Text="This is the interoperability we can have between both the technologies." 
@@ -19,6 +19,11 @@
             <Label Text="Also good for people that don't want to give up .Net and all that goodies that come from it." 
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
+            <Button Text="Go Back!"
+                    Command="{Binding GoBackCommand}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            <Button></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

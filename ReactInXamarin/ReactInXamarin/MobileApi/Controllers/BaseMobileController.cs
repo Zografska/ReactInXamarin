@@ -37,7 +37,9 @@ namespace ReactInXamarin.MobileApi.Controllers
         [Route(HttpVerbs.Get, "/navigate/{itemId}")]
         public async Task<string> NavigateToAnotherPage(string itemId)
         {
-            Device.BeginInvokeOnMainThread(async () => await _navigationService.NavigateTo<ItemPage>(new NavigationParameters { { "ItemId", itemId } }));
+            Device.BeginInvokeOnMainThread(async () => 
+                await _navigationService.NavigateTo<ItemPage>
+                    (new NavigationParameters { { "ItemId", itemId } }));
             return "OK";
         }
     }

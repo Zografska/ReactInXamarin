@@ -3,16 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ReactInXamarin.Controls;assembly=ReactInXamarin"
              x:Class="ReactInXamarin.MainPage">
+    <ScrollView>
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         
         <StackLayout Grid.Row="0" Margin="0,50,0,0">
             <Label TextColor="Gray" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold">Press a Color</Label>
             <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue" Padding="5,0">
-                <Button Text="Red" TextColor="Red" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="red" />
+                <Button BackgroundColor="Transparent" Text="Red" TextColor="Red" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="red" />
                 <Button Text="Orange" TextColor="Orange" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="orange" />
                 <Button Text="Yellow" TextColor="Yellow" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="yellow" />
                 <Button Text="Green" TextColor="Green" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Command="{Binding OnClickCommand}" CommandParameter="green" />
@@ -29,5 +30,5 @@
                                 Message="{Binding Message}"
                                 SourceUrl="http://127.0.0.1:8081/?listId=list1"/>
     </Grid>
-
+    </ScrollView>
 </ContentPage>
